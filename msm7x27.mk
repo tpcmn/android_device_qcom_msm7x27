@@ -1,5 +1,3 @@
-$(call inherit-product, vendor/qcom/msm7x27/qcom-vendor.mk)
-
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
@@ -36,7 +34,6 @@ PRODUCT_PACKAGES += \
     libmemalloc \
     liboverlay \
     libqdutils \
-    libtilerenderer \
     gralloc.msm7x27 \
     copybit.msm7x27
 
@@ -48,7 +45,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
-        system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
+    system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -58,6 +55,9 @@ PRODUCT_COPY_FILES += \
          frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
          frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
          frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
+
+# Inherit QCOM vendor
+$(call inherit-product, vendor/qcom/msm7x27/qcom-vendor.mk)
 
 # qcom-msm7x27 overlays
 DEVICE_PACKAGE_OVERLAYS += device/qcom/msm7x27/overlay
