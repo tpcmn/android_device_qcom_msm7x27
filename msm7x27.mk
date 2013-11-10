@@ -23,6 +23,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.camcorder.disablemeta=1
 
+# Dalvik
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.debug.alloc=0 \
+    dalvik.vm.heaptargetutilization=0.25
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
